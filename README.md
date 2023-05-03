@@ -1,5 +1,5 @@
 # Android-SerialPort
-该项目Fork自![licheedev](https://github.com/licheedev)的![Android-SerialPort-API](https://github.com/licheedev/Android-SerialPort-API)
+该项目Fork自[licheedev](https://github.com/licheedev)的[Android-SerialPort-API](https://github.com/licheedev/Android-SerialPort-API)
 
 此项目移植于谷歌官方串口库[android-serialport-api](https://code.google.com/archive/p/android-serialport-api/),但该项目仅支持串口名称及波特率，所以在项目的基础上添加支持数据位、数据位、停止位、流控等配置。
 
