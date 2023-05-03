@@ -10,7 +10,9 @@
 
 ## 使用
 
-### 1. 查询串口列表
+### 1. 将`lib_serialport`模块导入到自己的项目
+
+### 2. 查询串口列表
 
 ```java
 SerialPortHelper#getAllDevices();
@@ -18,7 +20,7 @@ SerialPortHelper#getAllDevices();
 SerialPortHelper#getAllDeicesPath();
 ```
 
-### 2. 配置串口参数
+### 3. 配置串口参数
 
 ```java
 SerialPortHelper#Builder(String port, int baudRate).build(); //支持配置串口号，波特率（默认值115200）
@@ -29,19 +31,19 @@ setFlowCon(int flowCon); // 支持设置流控 默认值为0
 setFlags(int flags); // 支持设置标志 默认值为0，O_RDWR  读写方式打开
 ```
 
-### 3. 打开串口
+### 4. 打开串口
 
 ```java
 SerialPortHelper#open();
 ```
 
-### 4. 关闭串口
+### 5. 关闭串口
 
 ```java
 SerialPortHelper#close();
 ```
 
-### 4. 发送数据
+### 6. 发送数据
 
 ```java
 SerialPortHelper#sendBytes(byte[] bytes); // 支持发送byte[]
@@ -49,7 +51,7 @@ SerialPortHelper#sendHex(String hex); // 支持发送Hex
 SerialPortHelper#sendTxt(String txt); // 支持发送ASCII码
 ```
 
-### 5. 接收数据
+### 7. 接收数据
 
 ```java
 public interface ISerialPortDataListener {
@@ -60,7 +62,7 @@ public interface ISerialPortDataListener {
 }
 ```
 
-### 6. 回调
+### 8. 回调
 
 ```java
 //  串口打开状态监听
@@ -69,7 +71,7 @@ void setIOpenSerialPortListener(IOpenSerialPortListener IOpenSerialPortListener)
 // 串口消息监听
 void setISerialPortDataListener(ISerialPortDataListener ISerialPortDataListener);
 ```
-### 7. proguard-rules 
+### 9. proguard-rules 
 ```
 -keep class me.f1reking.serialportlib.** {*;}
 ```
@@ -102,9 +104,4 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
-
-
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/GeekBugs/Android-SerialPort.svg)](https://starchart.cc/GeekBugs/Android-SerialPort)
 
