@@ -19,12 +19,9 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
 import android.util.Log;
-import me.f1reking.serialportlib.entity.BAUDRATE;
-import me.f1reking.serialportlib.entity.DATAB;
+
 import me.f1reking.serialportlib.entity.Device;
-import me.f1reking.serialportlib.entity.FLOWCON;
-import me.f1reking.serialportlib.entity.PARITY;
-import me.f1reking.serialportlib.entity.STOPB;
+
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;

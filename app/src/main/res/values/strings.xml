@@ -15,5 +15,5 @@
   -->
 
 <resources>
-    <string name="app_name">Android-SerialPort</string>
+    <string name="app_name">串口测试助手</string>
 </resources>
