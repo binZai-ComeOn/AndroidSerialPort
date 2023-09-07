@@ -6,7 +6,7 @@
 [![](https://jitpack.io/v/F1ReKing/Android-SerialPort.svg)](https://jitpack.io/#F1ReKing/Android-SerialPort)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/F1ReKing/Android-SerialPort/blob/master/LICENSE)
 
-![](https://raw.githubusercontent.com/F1ReKing/Android-SerialPort/master/3.webp)
+![](https://github.com/binZai-ComeOn/AndroidSerialPort/blob/master/app/img.png)
 
 ## 使用
 
