@@ -22,24 +22,52 @@ SerialPortHelper#getAllDeicesPath();
 
 ### 3. 配置串口参数
 
-```java
-SerialPortHelper#Builder(String port, int baudRate).build(); //支持配置串口号，波特率（默认值115200）
-setStopBits(int stopBits); // 支持设置停止位 默认值为2
-setDataBits(int dataBits); // 支持设置数据位 默认值为8
-setParity(int parity); // 支持设置检验位 默认值为0
-setFlowCon(int flowCon); // 支持设置流控 默认值为0
-setFlags(int flags); // 支持设置标志 默认值为0，O_RDWR  读写方式打开
+```kotlin
+mSerialPortHelper.port = // 支持配置串口号
+mSerialPortHelper.flags(int flags); // 支持设置标志
+mSerialPortHelper.baudRate = // 支持配置波特率
+mSerialPortHelper.dataBits = // 支持设置数据位 
+mSerialPortHelper.parity = // 支持设置检验位
+mSerialPortHelper.stopBits = // 支持设置停止位
+mSerialPortHelper.flowCon = // 支持设置流控
+mSerialPortHelper.setISerialPortDataListener(object : ISerialPortDataListener { // 支持数据回调监听
+    override fun onDataReceived(bytes: ByteArray?) {
+	byteToHex(1, bytes)
+    }
+
+    override fun onDataSend(bytes: ByteArray?) {
+	byteToHex(0, bytes)
+    }
+
+})
 ```
 
 ### 4. 打开串口
 
 ```java
-SerialPortHelper#open();
+// 同步打开串口（return false or ture）
+SerialPortHelper#open(); 
+// 打开串口监听（可选）
+mSerialPortHelper.setIOpenSerialPortListener(object : IOpenSerialPortListener {
+    override fun onSuccess(device: File?) {
+	runOnUiThread {
+	    showToast("串口打开成功")
+	}
+    }
+
+    override fun onFail(device: File?, status: Status?) {
+	runOnUiThread {
+	    showToast("串口打开失败")
+	}
+    }
+
+})
 ```
 
 ### 5. 关闭串口
 
 ```java
+// 同步关闭串口（return false or ture）
 SerialPortHelper#close();
 ```
 
@@ -75,18 +103,6 @@ void setISerialPortDataListener(ISerialPortDataListener ISerialPortDataListener)
 ```
 -keep class me.f1reking.serialportlib.** {*;}
 ```
-
-## 版本更新记录
-
-### 1.1
-
-- 优化api
-- 支持设置可选参数，并配置默认值
-
-### 1.0
-
-- 基础功能、支持设置串口号、波特率、数据位、校验位、停止位、流控等配置
-- 支持发送、接收数据
 
 ## License
 ```
